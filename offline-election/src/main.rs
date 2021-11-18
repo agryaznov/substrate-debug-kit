@@ -282,15 +282,15 @@ pub struct StakingConfig {
 	#[structopt(short, long, default_value = "0")]
 	iterations: usize,
 
-	#[structopt(short, long, default_value = "128")]
+	#[structopt(long, default_value = "128")]
 	max_payouts: usize,
 
 	/// If reduce is applied to the output.
-	#[structopt(short, long, parse(from_flag))]
+	#[structopt(long, parse(from_flag))]
 	reduce: bool,
 
 	/// The override file to interpret
-	#[structopt(short, long, parse(from_os_str))]
+	#[structopt(long, parse(from_os_str))]
 	manual_override: Option<PathBuf>,
 }
 
@@ -307,7 +307,7 @@ pub struct CouncilConfig {
 	output: Option<PathBuf>,
 
 	/// The override file to interpret
-	#[structopt(short, long, parse(from_os_str))]
+	#[structopt(long, parse(from_os_str))]
 	manual_override: Option<PathBuf>,
 }
 
