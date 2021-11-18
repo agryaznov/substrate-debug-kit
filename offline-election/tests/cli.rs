@@ -9,28 +9,24 @@ async fn test_client() -> sub_storage::Client {
 }
 
 #[test]
-#[ignore = "requires unsafe RPC"]
 fn staking_works() {
 	let mut cmd = Command::cargo_bin("offline-election").unwrap();
 	cmd.args(&["--uri", TEST_URI, "staking"]).unwrap();
 }
 
 #[test]
-#[ignore = "requires unsafe RPC"]
 fn council_works() {
 	let mut cmd = Command::cargo_bin("offline-election").unwrap();
 	cmd.args(&["--uri", TEST_URI, "council"]).unwrap();
 }
 
 #[test]
-#[ignore = "requires unsafe RPC"]
 fn dangling_works() {
 	let mut cmd = Command::cargo_bin("offline-election").unwrap();
 	cmd.args(&["--uri", TEST_URI, "dangling-nominators"]).unwrap();
 }
 
 #[test]
-#[ignore = "requires unsafe RPC"]
 fn nominator_check_works() {
 	let mut cmd = Command::cargo_bin("offline-election").unwrap();
 	let client = async_std::task::block_on(test_client());
